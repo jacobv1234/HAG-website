@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Advice Group | Weather</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='weather.css')}}">
+    
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/site/logo.png" alt="logo">
+        <a class="home" href="/">Home</a>
+        <a class="blog" href="/blog">Blog</a>
+        <a class="weather" href="/weather">Weather</a>
+        <a class="contact" href="/contact">Contact</a>
+    </div>
+    <div class="Weather-title">
+        <h1>Weather Forecast</h1>
+        <h3>Next 10 hours</h3>
+    </div>
+    <h2 class="Location">City, COUNTRY</h2>
+
+    <!--Weather forecast-->
+    <div class="Weather-body">
+        <div class="Hour0">
+            <h6 class="Time0">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp0">Now</h6>
+        </div>
+        <div class="Hour1">
+            <h6 class="Time1">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp1">Now</h6>
+        </div>
+        <div class="Hour2">
+            <h6 class="Time2">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp2">Now</h6>
+        </div>
+        <div class="Hour3">
+            <h6 class="Time3">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp3">Now</h6>
+        </div>
+        <div class="Hour4">
+            <h6 class="Time4">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp4">Now</h6>
+        </div>
+        <div class="Hour5">
+            <h6 class="Time5">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp5">Now</h6>
+        </div>
+        <div class="Hour6">
+            <h6 class="Time6">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp6">Now</h6>
+        </div>
+        <div class="Hour7">
+            <h6 class="Time7">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp7">Now</h6>
+        </div>
+        <div class="Hour8">
+            <h6 class="Time8">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp8">Now</h6>
+        </div>
+        <div class="Hour9">
+            <h6 class="Time9">Now</h6>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png">
+            <h6 class="Temp9">Now</h6>
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='weather.js')}}"></script>
+</body>
+</html>
