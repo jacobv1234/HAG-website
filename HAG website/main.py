@@ -3,8 +3,11 @@ from flask import Flask, render_template, url_for, request, jsonify
 from flask_cors import CORS
 
 # local imports
-from functions.openweather import OpenWeather as ow
+from functions.openweather import OpenWeather
+from functions.ambee import Ambee
 
+ow = OpenWeather()
+am = Ambee()
 
 # create the app
 app = Flask(__name__)
@@ -45,9 +48,13 @@ def weather_data_generation():
     city, country = ow.reverse_geocoding(longitude,latitude)
     forecast = ow.forecast(longitude,latitude,time)
 
+    # Ambee interactions
+    pollen = am.get_pollen(longitude,latitude)
+
     response = {
         'location': [city,country],
-        'forecast': forecast
+        'forecast': forecast,
+        'pollen' : pollen
     }
 
     return jsonify(response), 200

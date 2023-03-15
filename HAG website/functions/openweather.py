@@ -4,13 +4,13 @@ acquired this will generate dummy data."""
 
 class OpenWeather:
     # space for __init__ to load auth key
-    def __init__():
+    def __init__(self):
         pass
 
-    def reverse_geocoding(long, lat):
+    def reverse_geocoding(self, long, lat):
         return 'Norwich', 'UK'
     
-    def forecast(long, lat, time):
+    def forecast(self, long, lat, time):
         return {
             'Now': {
                 'type':'01d', # the type refers to the icons openweather provide
@@ -49,7 +49,7 @@ class OpenWeather:
                 'temp': 9
             },
             '7pm': {
-                'type': '09d',
+                'type': '09n',
                 'temp': 8
             }
         }
