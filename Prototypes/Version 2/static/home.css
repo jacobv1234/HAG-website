@@ -1,0 +1,87 @@
+body {
+    background-color: #ececec;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #7EF297;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar > a {
+    color: black;
+    top: 68px;
+    height: 30px;
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 146px;
+    text-align: center;
+    text-decoration: none;
+    border-width: 2px;
+    border-color: #253031;
+    border-style: solid;
+    border-bottom: 0cm;
+}
+
+.contact {
+    right: 10%;
+    background-color: #00bf63;
+}
+
+.blog {
+    right: calc(10% + 153px);
+    background-color: #00bf63;
+}
+
+.weather {
+    right: calc(10% + 306px);
+    background-color: #00bf63;
+}
+
+.home {
+    right: calc(10% + 459px);
+    background-color: #ececec;
+}
+
+/* Main body */
+.sungraphic {
+    position: absolute;
+    bottom: 0%;
+    width: max(300px,30%);
+    left: calc(25% - max(150px,15%));
+}
+
+.about {
+    position: absolute;
+    top: 150px;
+    width:40%;
+    left: 5%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.description {
+    top: 250px;
+    position: absolute;
+    width: 440px;
+    left: calc(25% - 220px);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gobutton {
+    position: absolute;
+    top: 400px;
+    color: white;
+    background-color: #00bf63;
+    width: 150px;
+    border-radius: 1000px;
+    left: calc(25% - 75px);
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Advice Group - Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/site/logo.png" alt="logo">
+        <a class="home" href="/">Home</a>
+        <a class="blog" href="/blog">Blog</a>
+        <a class="weather" href="/weather">Weather</a>
+        <a class="contact" href="/contact">Contact</a>
+    </div>
+    <h1 class="about">Find weather and pollen where you are.</h1>
+    <p class="description">Our simple weather tracking tool allows you to see the weather forecasts, pollen counts, and air quality data for where you are. All it takes is a couple clicks!</p>
+    <img class="sungraphic" src="/static/site/sun.png" alt="sun">
+    <button class="gobutton">Go Now <img src="static\site\go-arrow.png"></button>
+</body>
+</html>
