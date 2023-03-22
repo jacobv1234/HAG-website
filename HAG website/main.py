@@ -99,6 +99,45 @@ def send_email():
     return jsonify(response), 201
 
 
+
+# check admin password
+@app.route('/passcheck',methods=['POST'])
+def passcheck():
+    # get json body
+    data = request.get_json()
+    guess_hash = data['hash']
+
+    # load the correct hash
+    with open('correct_pass_hash.txt', 'r') as f:
+        correct_hash = f.read()
+    
+    # compare
+    if guess_hash == correct_hash:
+        message = 'Correct password'
+        code = 200
+    else:
+        message = 'Wrong password'
+        code = 401
+    
+    # send response
+    response = {
+        'message': message
+    }
+    return jsonify(response), code
+
+
+# change admin password
+@app.route('/admin/password', methods=['POST'])
+def changepass():
+    # get json body
+    data = request.get_json()
+    hash = data['hash']
+
+    # write to the file
+    with open('correct_pass_hash.txt', 'w') as f:
+        f.write(hash)
+
+
 ## RUN ##
 if __name__ == '__main__':
     app.run('127.0.0.1',8080)

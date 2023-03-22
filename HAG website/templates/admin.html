@@ -15,11 +15,25 @@
         <a class="weather" href="/weather">Weather</a>
         <a class="contact" href="/contact">Contact</a>
     </div>
+    <!--Password check-->
     <div class="password">
         <p>Password:</p>
         <input class="pword_entry" type="password">
-        <button class="Submit" onclick="checkpass()">Submit</button>
+        <button onclick="checkpass()">Submit</button>
     </div>
-    
+
+    <!--Main tools-->
+    <div class="main">
+        <!--Change password-->
+        <div class="password-change">
+            <p>Update Password:</p>
+            <input class="new_pword_entry" type="password">
+            <button onclick="changepass()">Change</button>
+        </div>
+        <!--Message popup-->
+        <p class="response">Welcome</p>
+    </div>
+
+    <script src="{{url_for('static',filename='admin.js')}}"></script>
 </body>
 </html>
