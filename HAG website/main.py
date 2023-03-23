@@ -136,6 +136,35 @@ def changepass():
     # write to the file
     with open('correct_pass_hash.txt', 'w') as f:
         f.write(hash)
+    
+    # response
+    response = {
+        'message': 'Password updated successfully'
+    }
+    return jsonify(response), 201
+
+
+# change / get contact email
+@app.route('/admin/email', methods=['GET','POST'])
+def contact_email():
+    # get current email
+    if request.method == 'GET':
+        with open('receiver.txt','r') as f:
+            email = f.read()
+        response = {
+            'email': email 
+        }
+        return jsonify(response), 200
+    
+    # update email
+    else:
+        data = request.get_json()
+        with open('receiver.txt','w') as f:
+            f.write(data['email'])
+        response = {
+            'message' : 'Email updated successfully' 
+        }
+        return jsonify(response), 200
 
 
 ## RUN ##

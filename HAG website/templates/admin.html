@@ -26,10 +26,49 @@
     <div class="main">
         <!--Change password-->
         <div class="password-change">
-            <p>Update Password:</p>
-            <input class="new_pword_entry" type="password">
+            <h2>Update Password</h2>
+            <div>
+                <label for="new_pword_entry1">New password:</label>
+                <input class="new_pword_entry1" type="password" id="new_pword_entry1" minlength="1" placeholder="Password">
+            </div>
+            <div>
+                <label for="new_pword_entry2">Confirm:</label>
+                <input class="new_pword_entry2" type="password" id="new_pword_entry2" placeholder="Password">
+            </div>
             <button onclick="changepass()">Change</button>
         </div>
+
+        <div class="email-change">
+            <h2>Contact Email</h2>
+            <div>
+                <label class="current-email">Currently</label>
+            </div>
+            <div>
+                <label for="email">New email:</label>
+                <input class="email" type="email" id="email" inputmode="email" placeholder="Email">
+            </div>
+            <button onclick="changeemail()">Change</button>
+        </div>
+
+        <!--Blog editing-->
+        <div class="blog-list">
+            
+        </div>
+        <div class="blog-editor">
+            <p class="ID"></p>
+            <h1 class="blog-editor-title">Create a new blog post</h1>
+            <label for="title" class="title-label">Title:</label>
+            <input type="text" class="title" id="title" placeholder="Top 10 Clever Blog Post Titles">
+            <label for='image-url' class="image-url-label">Image URL:</label>
+            <input type="url" class="image-url" id="image-url" placeholder="http://www.example.com/image.png">
+            <label for="preview" class="preview-label">Preview text:</label>
+            <textarea class="preview" id="preview" placeholder="What the user sees before clicking on see more - which cuts this off at 300 characters"></textarea>
+            <label for="post-body" class="post-body-label">Body (HTML):</label>
+            <textarea class="post-body" id="post-body" placeholder="Go wild!"></textarea>
+            <button onclick="createpost()" class="create-post">Create post</button>
+            <button onclick="clearblog()" class="clear-blog">Clear</button>
+            </div>
+
         <!--Message popup-->
         <p class="response">Welcome</p>
     </div>

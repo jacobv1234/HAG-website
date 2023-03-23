@@ -1,3 +1,10 @@
+// get current contact email
+function get_contact_email() {
+    fetch('/admin/email').then(response => response.json()).then(data => {
+        document.querySelector('.current-email').innerHTML = 'Currently ' + data['email']
+    })
+}
+
 // this function is directly from MDN Web Docs, and is free to use for sha-256 hashing strings
 
 async function digestMessage(message) {
@@ -38,6 +45,8 @@ function checkpass() {
                 console.log(data)
                 // hide the password entry
                 document.querySelector('.password').style.display = 'none'
+                // show everything else
+                document.querySelector('.main').style.display = 'inline'
             }
         })
     })
@@ -46,16 +55,54 @@ function checkpass() {
 
 // update the password
 function changepass() {
-    let password = document.querySelector('.new_pword_entry').value
-    digestMessage(password).then(hash => {
-        console.log(hash)
+    document.querySelector('.response').innerHTML = 'Please wait...'
+    let password1 = document.querySelector('.new_pword_entry1').value
+    let password2 = document.querySelector('.new_pword_entry2').value
+    if (password1 == password2) {
+        digestMessage(password1).then(hash => {
+            console.log(hash)
 
+            let body = {
+                hash: hash
+            }
+
+            // send to /admin/password
+            fetch('/admin/password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => response.json())
+            
+            // handle response
+            .then(data => {
+                document.querySelector('.response').innerHTML = data['message']
+                document.querySelector('.new_pword_entry1').value = ''
+                document.querySelector('.new_pword_entry2').value = ''
+            })
+        })
+    } else {
+        document.querySelector('.response').innerHTML = 'Passwords do not match.'
+    } 
+}
+
+
+// change destination email for contact
+function changeemail() {
+    document.querySelector('.response').innerHTML = 'Please wait...'
+    let email = document.querySelector('.email').value
+    // validation - '@' present, only one '@', at least one '.' after the '@'
+    valid_email = (email.indexOf('@') > -1) && (email.split('@').length == 2) && (email.split('@').pop().indexOf('.') > -1)
+    if  (valid_email) {
+        // send POST request
         let body = {
-            hash: hash
+            email: email
         }
 
-        // send to /admin/password
-        fetch('/admin/password', {
+        // send to /admin/email
+        fetch('/admin/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -67,6 +114,19 @@ function changepass() {
         // handle response
         .then(data => {
             document.querySelector('.response').innerHTML = data['message']
+            document.querySelector('.email').value = ''
+            get_contact_email()
         })
-    })
+    } else {
+        document.querySelector('.response').innerHTML = 'Please enter a valid email'
+    }
 }
+
+// upload blog post to backend
+function createpost() {
+
+}
+
+
+// run automatically
+get_contact_email()

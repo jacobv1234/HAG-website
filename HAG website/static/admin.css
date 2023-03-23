@@ -1,5 +1,6 @@
 body {
     background-color: #ececec;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Navbar */
@@ -57,15 +58,130 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+.main {
+    display: none;
+}
 
 /* password update */
 .password-change {
     position: absolute;
     top: 100px;
-    width: 10%;
-    height: 100px;
+    left: 10px;
+    width: 375px;
+    height: 130px;
+    border-style: solid;
+    border-width: 3px;
+}
+.password-change > div > input {
+    position: absolute;
+    right: 0%;
+}
+
+/* email update */
+.email-change {
+    position: absolute;
+    top: 233px;
     left: 10px;
     border-style: solid;
+    height: 130px;
+    width: 375px;
+}
+.email {
+    width: 75%;
+    position: absolute;
+    right: 0px;
+}
+
+
+/* blog editor */
+.blog-editor {
+    position: absolute;
+    left: 388px;
+    right: 10px;
+    top: 100px;
+    bottom: 40px;
+    border-style: solid;
+}
+
+.title {
+    position: absolute;
+    width: 80%;
+    right: 20px;
+    top: 80px;
+}
+
+.title-label {
+    position: absolute;
+    width: 20%;
+    text-align: center;
+    top: 80px;
+}
+
+.image-url {
+    position: absolute;
+    width: 80%;
+    right: 20px;
+    top: 105px;
+}
+
+.image-url-label {
+    position: absolute;
+    width: 20%;
+    text-align: center;
+    top: 105px;
+}
+
+.preview {
+    position: absolute;
+    width: 40%;
+    bottom: 50px;
+    left: 5%;
+    resize: none;
+    height: calc(100% - 225px);
+}
+
+.preview-label {
+    position: absolute;
+    left: 5%;
+    top: 150px;
+}
+
+.post-body {
+    position: absolute;
+    width: 40%;
+    bottom: 50px;
+    right: 5%;
+    resize: none;
+    height: calc(100% - 225px);
+}
+
+.post-body-label {
+    position: absolute;
+    right: 5%;
+    width: calc(40% + 7px);
+    top: 150px;
+}
+
+.create-post {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    border-color: #00bf63;
+    width: 100px;
+}
+
+.clear-blog {
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+    border-color: crimson;
+    width: 50px;
+}
+
+.blog-editor-title {
+    position: absolute;
+    left: 10px;
+    top: 0px;
 }
 
 /* message updates */
