@@ -21,7 +21,7 @@ requests
 To run any of the prototype versions, open 'main.py'.
 This will host the site locally.
 To access, in a browser go to 'http://localhost:8080'.
-For versions that have an admin panel (V5 and up), this can be found at 'http://localhost:8080/admin'.
+For versions that have an admin panel (V5 and up), this can be found at 'http://localhost:8080/admin'. The password is 'healthadvice123' unless changed.
 Make sure that in the command prompt window that appears you press Ctrl+C to exit BEFORE opening another version!
 
 ## VERSION SPECIFIC ##

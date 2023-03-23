@@ -1,0 +1,106 @@
+body {
+    background-color: #ececec;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #7EF297;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar > a {
+    color: black;
+    top: 68px;
+    height: 30px;
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 146px;
+    text-align: center;
+    text-decoration: none;
+    border-width: 2px;
+    border-color: #253031;
+    border-style: solid;
+    border-bottom: 0cm;
+}
+
+.contact {
+    right: 10%;
+    background-color: #00bf63;
+}
+
+.blog {
+    right: calc(10% + 153px);
+    background-color: #00bf63;
+}
+
+.weather {
+    right: calc(10% + 306px);
+    background-color: #00bf63;
+}
+
+.home {
+    right: calc(10% + 459px);
+    background-color: #00bf63;
+}
+
+/* Main body */
+
+/* password lock */
+.password {
+    position: absolute;
+    top: 50%;
+    border-style: solid;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main {
+    display: none;
+}
+
+/* password update */
+.password-change {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: 300px;
+    height: 130px;
+    border-style: solid;
+    border-width: 3px;
+}
+.password-change > div > input {
+    position: absolute;
+    right: 0%;
+}
+
+/* email update */
+.email-change {
+    position: absolute;
+    top: 100px;
+    left: 316px;
+    border-style: solid;
+    height: 130px;
+    width: 375px;
+}
+.email {
+    width: 75%;
+    position: absolute;
+    right: 0px;
+}
+
+
+/* message updates */
+.response {
+    position: absolute;
+    bottom: 5px;
+    width: 99%;
+    border-top-style: solid;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    height: 20px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Advice Group | Admin</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='admin.css')}}">
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/site/logo.png" alt="logo">
+        <a class="home" href="/">Home</a>
+        <a class="blog" href="/blog">Blog</a>
+        <a class="weather" href="/weather">Weather</a>
+        <a class="contact" href="/contact">Contact</a>
+    </div>
+    <!--Password check-->
+    <div class="password">
+        <p>Password:</p>
+        <input class="pword_entry" type="password">
+        <button onclick="checkpass()">Submit</button>
+    </div>
+
+    <!--Main tools-->
+    <div class="main">
+        <!--Change password-->
+        <div class="password-change">
+            <h2>Update Password</h2>
+            <div>
+                <label for="new_pword_entry1">New password:</label>
+                <input class="new_pword_entry1" type="password" id="new_pword_entry1" minlength="1" placeholder="Password">
+            </div>
+            <div>
+                <label for="new_pword_entry2">Confirm:</label>
+                <input class="new_pword_entry2" type="password" id="new_pword_entry2" placeholder="Password">
+            </div>
+            <button onclick="changepass()">Change</button>
+        </div>
+
+        <div class="email-change">
+            <h2>Contact Email</h2>
+            <div>
+                <label class="current-email">Currently</label>
+            </div>
+            <div>
+                <label for="email">New email:</label>
+                <input class="email" type="email" id="email" inputmode="email" placeholder="Email">
+            </div>
+            <button onclick="changeemail()">Change</button>
+        </div>
+
+        <!--Message popup-->
+        <p class="response">Welcome</p>
+    </div>
+
+    <script src="{{url_for('static',filename='admin.js')}}"></script>
+</body>
+</html>
