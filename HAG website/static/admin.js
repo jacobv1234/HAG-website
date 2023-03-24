@@ -124,7 +124,52 @@ function changeemail() {
 
 // upload blog post to backend
 function createpost() {
+    document.querySelector('.response').innerHTML = 'Please wait...'
+    // get values, cancel if empty
+    let title = document.querySelector('.title').value
+    if (title == '') {
+        document.querySelector('.response').innerHTML = 'Please enter a title.'
+        return
+    }
+    let image_url = document.querySelector('.image-url').value
+    if (image_url == '') {
+        document.querySelector('.response').innerHTML = 'Please enter an image URL.'
+        return
+    }
+    let preview = document.querySelector('.preview').value
+    if (preview == '') {
+        document.querySelector('.response').innerHTML = 'Please enter some preview text'
+        return
+    }
+    let html = document.querySelector('.post-body').value
+    if (html == '') {
+        document.querySelector('.response').innerHTML = 'Please enter the blog contents'
+        return
+    }
 
+    // assemble into POST request body
+    body = {
+        title: title,
+        image: image_url,
+        preview: preview,
+        html: html,
+        timestamp: Date.now() // so the newest one can be located - may use this instead of UUIDs
+    }
+
+    // send request to /admin/create
+    fetch('/admin/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(body)
+    })
+    .then(response => response.json())
+    
+    // handle response
+    .then(data => {
+        document.querySelector('.response').innerHTML = data['message']
+    })
 }
 
 

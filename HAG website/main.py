@@ -2,6 +2,7 @@
 from flask import Flask, render_template, url_for, request, jsonify
 from flask_cors import CORS
 from yagmail import SMTP
+from json import dumps, loads
 
 # local imports
 from functions.openweather import OpenWeather
@@ -166,6 +167,22 @@ def contact_email():
         }
         return jsonify(response), 200
 
+
+# blog post creation
+@app.route('/admin/create', methods=['POST'])
+def create_post():
+    blog_json = request.get_json()
+    timestamp = blog_json['timestamp']
+    # create blog file
+    with open(f'static/blog/{timestamp}.json', 'w') as f:
+        f.write(dumps(blog_json))
+    
+    # response
+    response = {
+        'message': 'Blog post created successfully.'
+    }
+    return jsonify(response), 201
+    
 
 ## RUN ##
 if __name__ == '__main__':
