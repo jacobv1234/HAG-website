@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Advice Group - Blog</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='blog.css')}}">
 </head>
 <body>
-    <img src="/static/site/logo.png">
-    <h1>Blog</h1>
-    <a href="/">go to home</a>
+    <div class="navbar">
+        <img src="/static/site/logo.png" alt="logo">
+        <a class="home" href="/">Home</a>
+        <a class="blog" href="/blog">Blog</a>
+        <a class="weather" href="/weather">Weather</a>
+        <a class="contact" href="/contact">Contact</a>
+    </div>
+    <h1 class="loading">Loading blog, please wait...</h1>
+    <div class="posts">
+        <!--The blog posts are created in here by blog.js-->
+    </div>
+    <script src="{{url_for('static',filename='blog.js')}}"></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
-# imports - only import what is needed
+# imports - only import what is needed for security
+# while url_for is not directly used in this file it is imported so the HTML files can use it
+# so the HTML files can use it to connect to CSS and JS files
 from flask import Flask, render_template, url_for, request, jsonify
 from flask_cors import CORS
 from yagmail import SMTP
 from json import dumps, loads
+from os import listdir
 
 # local imports
 from functions.openweather import OpenWeather
@@ -182,7 +185,36 @@ def create_post():
         'message': 'Blog post created successfully.'
     }
     return jsonify(response), 201
+
+# gets all blog posts in reverse release order
+@app.route('/blog/all', methods=['GET'])
+def load_blogs():
+    # get a list of all files
+    posts = listdir('static/blog')
+    posts.sort()
+    # display them in console for debug
+    print(f'Contents of static/blog: {posts}')
+
+    # for each one load it and store the contents in all_posts
+    # which is a list so they stay in the correct order when sent
+    all_posts = []
+    for post_name in posts:
+        with open(f'static/blog/{post_name}', 'r') as f:
+            post_str = f.read()
+        
+        post_json = loads(post_str)
+        all_posts.append(post_json)
     
+    # newest first
+    all_posts.reverse()
+
+    # response
+    response = {
+        'all_posts': all_posts
+    }
+    return jsonify(response), 200
+
+
 
 ## RUN ##
 if __name__ == '__main__':
