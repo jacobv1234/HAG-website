@@ -54,60 +54,7 @@ body {
 
 /* Main body */
 
-.loading {
+.Content {
     position: absolute;
-    left: 50%;
-    top: 200px;
-    transform: translateX(-50%);
-}
-
-/* Posts */
-
-.posts > div {
-    position: absolute;
-    width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 325px;
-    background-color: #7EF297;
-    border-radius: 50px;
-    border-color: #253031;
-    border-width: 5px;
-    border-style: solid;
-}
-
-.posts > div > h3 {
-    position: absolute;
-    width: calc(100% - 325px);
-    text-align: center;
-    right: 0%;
-    font-size: 30px;
-    top: 0px;
-}
-
-.posts > div > img {
-    position: absolute;
-    width: 350px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.posts > div > p {
-    font-size: 20px;
-    position: absolute;
-    top: 70px;
-    width: calc(100% - 375px);
-    right: 25px;
-    text-align: center;
-}
-
-.posts > div > button {
-    position: absolute;
-    border-radius: 1000px;
-    width: 10%;
-    font-size: 25px;
-    color: white;
-    background-color: #00bf63;
-    right: 50px;
-    bottom: 25px;
+    top: 125px;
 }

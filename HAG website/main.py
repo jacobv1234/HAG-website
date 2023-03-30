@@ -41,6 +41,10 @@ def contactpage():
 def adminpage():
     return render_template('admin.html')
 
+@app.route('/blog/view/<id>')
+def viewpage(id): # the argument is not used but is there so that <id> in the URL can be anything
+    return render_template('view.html')
+
 
 # weather page content generation
 @app.route('/weather/content', methods=['POST'])
@@ -186,6 +190,7 @@ def create_post():
     }
     return jsonify(response), 201
 
+
 # gets all blog posts in reverse release order
 @app.route('/blog/all', methods=['GET'])
 def load_blogs():
@@ -212,6 +217,39 @@ def load_blogs():
     response = {
         'all_posts': all_posts
     }
+    return jsonify(response), 200
+
+
+# gets just the most recent blog post to save on transfer time
+# this function is very similar to the above one but without the loop
+@app.route('/lastblog', methods=['GET'])
+def last_blog():
+    # get a list of all files
+    posts = listdir('static/blog')
+    posts.sort()
+    # display them in console for debug
+    print(f'Contents of static/blog: {posts}')
+
+    # get contents of most recent
+    with open(f'static/blog/{posts[-1]}', 'r') as f:
+        post_str = f.read()
+    
+    # response - directly send the blog json so less indexing problems at the other end
+    response = loads(post_str)
+    return jsonify(response), 200
+
+
+# gets a specific blog post
+# very similar to the above but after a specific value instead of the last one
+# so it doesn't need to list all of the options
+@app.route('/getblog/<id>', methods=['GET'])
+def specific_blog(id):
+    # get contents of correct post
+    with open(f'static/blog/{id}.json', 'r') as f:
+        post_str = f.read()
+    
+    # response - directly send the blog json so less indexing problems at the other end
+    response = loads(post_str)
     return jsonify(response), 200
 
 

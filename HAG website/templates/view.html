@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Advice Group - Blog</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='blog.css')}}">
+    <title>Health Advice Group | Blog</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='view.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 <body>
@@ -16,10 +16,8 @@
         <a class="weather" href="/weather">Weather</a>
         <a class="contact" href="/contact">Contact</a>
     </div>
-    <h1 class="loading">Loading blog, please wait...</h1>
-    <div class="posts">
-        <!--The blog posts are created in here by blog.js-->
+    <div class="Content">
+        <!--The custom stuff sits in here so the CSS can be changed slightly and it looks nice-->
     </div>
-    <script src="{{url_for('static',filename='blog.js')}}"></script>
+    <script src="{{url_for('static',filename='view.js')}}"></script>
 </body>
-</html>

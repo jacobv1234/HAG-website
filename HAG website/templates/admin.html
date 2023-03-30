@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Advice Group | Admin</title>
     <link rel="stylesheet" href="{{url_for('static',filename='admin.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 <body>
     <div class="navbar">
@@ -55,19 +56,23 @@
             
         </div>
         <div class="blog-editor">
-            <p class="ID"></p>
             <h1 class="blog-editor-title">Create a new blog post</h1>
             <label for="title" class="title-label">Title:</label>
             <input type="text" class="title" id="title" placeholder="Top 10 Clever Blog Post Titles">
             <label for='image-url' class="image-url-label">Image URL:</label>
             <input type="url" class="image-url" id="image-url" placeholder="http://www.example.com/image.png">
             <label for="preview" class="preview-label">Preview text:</label>
-            <textarea class="preview" id="preview" placeholder="What the user sees before clicking on see more - which cuts this off at 300 characters"></textarea>
+            <textarea class="preview" id="preview" placeholder="What the user sees before clicking on the post"></textarea>
             <label for="post-body" class="post-body-label">Body (HTML):</label>
             <textarea class="post-body" id="post-body" placeholder="Only include the inside of the <body> tag."></textarea>
-            <button onclick="createpost()" class="create-post">Create post</button>
+            <button onclick="createpost(false)" class="create-post">Create post</button>
             <button onclick="clearblog()" class="clear-blog">Clear</button>
-            </div>
+        </div>
+        
+        <!--Area for available posts to update-->
+        <div class="existing-posts">
+            <h2>Update a post</h2>
+        </div>
 
         <!--Message popup-->
         <p class="response">Welcome</p>

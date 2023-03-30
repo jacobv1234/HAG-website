@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Advice Group | Home</title>
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
-    
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 <body>
     <div class="navbar">
@@ -20,6 +20,16 @@
     <p class="description">Our simple weather tracking tool allows you to see the weather forecasts, pollen counts, and air quality data for where you are. All it takes is a couple clicks!</p>
     <img class="sungraphic" src="/static/site/sun.png" alt="sun">
     <button type="button" onclick="goNow()" class="gobutton">Go Now <img src="static\site\go-arrow.png"></button>
+    <!--Featured Article-->
+    <div class="featured-article-outer">
+        <h2>Featured Blog</h2>
+        <div class="featured-article-inner">
+            <h3 class="title">Loading</h3>
+            <img class="image" src="" alt="Please wait">
+            <p class="preview">Please wait</p>
+            <button class="blog-button" onclick="goToPage()">View <img src="static\site\go-arrow.png"></button>
+        </div>
+    </div>
     <script src="{{url_for('static',filename='home.js')}}"></script>
 </body>
 </html>

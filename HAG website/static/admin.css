@@ -11,6 +11,9 @@ body {
     position: fixed;
     top: 0%;
     left: 0%;
+    border-bottom-color: #253031;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
 }
 
 .navbar > a {
@@ -175,7 +178,6 @@ body {
     bottom: 5px;
     left: 110px;
     border-color: crimson;
-    width: 50px;
 }
 
 .blog-editor-title {
@@ -184,12 +186,54 @@ body {
     top: 0px;
 }
 
+/* Update posts */
+.existing-posts {
+    position: absolute;
+    top: 366px;
+    left: 10px;
+    border-style: solid;
+    width: 375px;
+    bottom: 40px;
+    overflow-y: scroll;
+}
+
+.existing-posts > div {
+    position: absolute;
+    width: 100%;
+    border-top-style: solid;
+    border-bottom-style:  solid;
+    border-color: #aaaaaa;
+    height: 175px;
+}
+
+.existing-posts > div > h3 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.existing-posts > div > img {
+    position: absolute;
+    height: 125px;
+    width: 60%;
+    top: 50px;
+}
+
+.existing-posts > div > button {
+    position: absolute;
+    border-color: orange;
+    bottom: 60px;
+    transform: translateY(50%);
+    right: 20px;
+}
+
+
 /* message updates */
 .response {
     position: absolute;
     bottom: 5px;
     width: 99%;
-    border-top-style: solid;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
