@@ -1,6 +1,7 @@
 ## VERSIONS ##
 
 Each version of the prototype is explained in the Development Docs.
+Remember to unzip before use!
 
 
 ## DEPENDENCIES ##
